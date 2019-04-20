@@ -33,7 +33,7 @@ Build the PYONI commands
 
 The following example calls a python 3 script named: helloworld.py from the /python directory and passes the program up to 20 parameters individually via the PYRUN CL command. 
 
- PYRUN SCRIPTDIR('/python')          
+ ```PYRUN SCRIPTDIR('/python')          
       SCRIPTFILE(helloworld.py)            
       PYVERSION(3)                          
       PARM01(p1)                            
@@ -61,21 +61,22 @@ The following example calls a python 3 script named: helloworld.py from the /pyt
       DSPSTDOUT(*YES)    
       LOGSTDOUT(*NO)     
       PRTSTDOUT(*NO)     
-      DLTSTDOUT(*YES)    
+      DLTSTDOUT(*YES)   
+```      
 
 # PYRUN command parms
 
-**SCRIPTDIR** - The IFS directory location for the Python script.
+**SCRIPTDIR** - The IFS directory location for the Python script. **Ex: /python**
 
-**SCRIPTFILE** - The script file you want to call without the directory path. **Ex: hello.py**
+**SCRIPTFILE** - The script file name you want to call without the directory path. The PYRUN command puts it all together. **Ex: hello.py**
 
-**PYVERSION** - The Python version shoud be set to either **2** for Python 2 or **3** for Python 3.
+**PYVERSION** - The Python version you want to use. It should be set to either **2** for Python 2 or **3** for Python 3.
 
-**PARM01 - PARM20** - Command line parameters. Up to 20 args can be passed to a Pythone script call. Do NOT put double quotes around parms or your program call may get errors because your parameters get compromised with extra double quotes. Double quotes are added automatically inside the CL command processing program. Single quotes are allowed around your parmaeter data:  Ex: **'My Parm Value 1' 'My Parm Value 2'**
+**PARM01 - PARM20** - Command line parameters. Up to 20 args can be passed to a Python script call. Do NOT put double quotes around parms or your program call may get errors because your parameters get compromised with extra double quotes. Normally double quotes are added automatically inside the CL command processing program. Single quotes are allowed around your parmaeter data:  Ex: **'My Parm Value 1' 'My Parm Value 2'**
 
-**PYPATH** - The this is the directory path to your Python binaries (python/python3). Hopefully you have already installed the Yum versions so the default path should be good. Leave value set to `*DEFAULT`. **Default= /QOpenSys/pkgs/bin**
+**PYPATH** - The this is the directory path to your Python binaries (python/python3). Hopefully you have already installed the Yum versions so the default path should be good. Leave value set to `*DEFAULT`. **Default= /QOpenSys/pkgs/bin**. The default path lives in the **PYPATH** data area in the **PYONI** library.
 
-**CCSID** - When using the iToolkit I originally had some issues with CL commands not working correctly. Don't remember exactly why. This may have been solved, however I recommend still passing 37 unless you are in a non US country. If you set to `*SAME`, the CCSID will be the same as your current job with no change.
+**CCSID** - When using the iToolkit component for command access, I originally had some issues with CL commands not working correctly. However I don't currently remember exactly why. This may have been solved, however I recommend still passing a value of 37 unless you are in a non US country. If you set to `*SAME`, the CCSID will stay the same as your current job with no change.
 
 **DSPSTDOUT** - Display the outfile contents. Nice when debigging. 
 
