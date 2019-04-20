@@ -33,7 +33,8 @@ Build the PYONI commands
 
 The following example calls a python 3 script named: helloworld.py from the /python directory and passes the program up to 20 parameters individually via the PYRUN CL command. 
 
- ```PYRUN SCRIPTDIR('/python')          
+ ```
+      PYRUN SCRIPTDIR('/python')          
       SCRIPTFILE(helloworld.py)            
       PYVERSION(3)                          
       PARM01(p1)                            
@@ -46,16 +47,6 @@ The following example calls a python 3 script named: helloworld.py from the /pyt
       PARM08(p8)                            
       PARM09(p9)                            
       PARM10(p10)                           
-      PARM11(p11)                           
-      PARM12(p12)                           
-      PARM13(p13)                           
-      PARM14(p14)        
-      PARM15(p15)        
-      PARM16(p16)        
-      PARM17(p17)        
-      PARM18(p18)        
-      PARM19(p19)        
-      PARM20(p20)        
       PYPATH(*DEFAULT)   
       CCSID(37)          
       DSPSTDOUT(*YES)    
