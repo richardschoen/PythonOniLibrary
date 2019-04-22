@@ -54,7 +54,7 @@ The following example calls a python 3 script named: helloworld.py from the /pyt
 
 **PYVERSION** - The Python version you want to use. It should be set to either **2** for Python 2 or **3** for Python 3.
 
-**ARGS** - Command line parameter argument list. Up to 40 argument/parameter values can be passed to a Python script call. Do NOT put double quotes around the parms or your program call may get errors because your parameters get compromised with extra double quotes. Normally double quotes are added automatically inside the CL command processing program. Single quotes are allowed around your parmaeter data:  Ex: **'My Parm Value 1' 'My Parm Value 2'**
+**ARGS** - Command line parameter argument list. Up to 40 - 200 byte argument/parameter values can be passed to a Python script call. Each parm is automatically trimmed. Do NOT put double quotes around the parms or your program call may get errors because your parameters get compromised with extra double quotes. The double quotes are already added automatically inside the CL command processing program. Single quotes are allowed around your parmaeter data though if desired:  Ex: **'My Parm Value 1' 'My Parm Value 2'**
 
 **PYPATH** - The this is the directory path to your Python binaries (python/python3). Hopefully you have already installed the Yum versions so the default path should be good. Leave value set to `*DEFAULT`. **Default= /QOpenSys/pkgs/bin**. The default path lives in the **PYPATH** data area in the **PYONI** library.
 
