@@ -117,3 +117,16 @@ The following example calls a python 3 script named: helloworld.py from the /pyt
 **DLTSTDOUT** - This option insures that the STDOUT IFS temp files get cleaned up after processing. All IFS log files get created in the /tmp/mono directory.
 
 
+# Sample script to echo parms and test PYRUN if you need one
+
+Enter the following statements into a Python file in the IFS. Name it **helloworld.py**
+
+```
+#Hello World Python script to echo parms
+#!/usr/bin/python                                      
+                                                       
+import sys                                             
+                                                       
+#Echo back the parameters                              
+print (sys.argv[1:]);                                  
+```
