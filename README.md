@@ -70,7 +70,7 @@ The following example calls a python 3 script named: helloworld.py from the /pyt
 
 # Using the PYRUN2 CL command to call a Python application passing individual named parms. 
 
-The following example calls a python 3 script named: helloworld.py from the /python directory and passes the program up to 20 parameters individually via the PYRUN CL command. 
+The following example calls a python 3 script named: helloworld.py from the /python directory and passes the program up to 20 parameters individually via the PYRUN CL command. (This was the original PYRUN command left in for educational purposes.) 
 
  ```
       PYRUN2 SCRIPTDIR('/python')          
