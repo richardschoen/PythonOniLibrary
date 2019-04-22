@@ -31,10 +31,49 @@ Build the PYONI commands
 
 # Using the PYRUN CL command to call a Python application
 
-The following example calls a python 3 script named: helloworld.py from the /python directory and passes the program up to 20 parameters individually via the PYRUN CL command. 
+The following example calls a python 3 script named: helloworld.py from the /python directory and passes the program up to 40 parameters individually via the PYRUN CL command. 
 
  ```
       PYRUN SCRIPTDIR('/python')          
+      SCRIPTFILE(helloworld.py)            
+      PYVERSION(3)
+      ARGS(p1val p2val p3val p4val p5val p6val p7val)                          
+      PYPATH(*DEFAULT)   
+      CCSID(37)          
+      DSPSTDOUT(*YES)    
+      LOGSTDOUT(*NO)     
+      PRTSTDOUT(*NO)     
+      DLTSTDOUT(*YES)   
+```      
+
+# PYRUN command parms
+
+**SCRIPTDIR** - The IFS directory location for the Python script. **Ex: /python**
+
+**SCRIPTFILE** - The script file name you want to call without the directory path. The PYRUN command puts it all together. **Ex: hello.py**
+
+**PYVERSION** - The Python version you want to use. It should be set to either **2** for Python 2 or **3** for Python 3.
+
+**ARGS** - Command line parameter argument list. Up to 40 argument/parameter values can be passed to a Python script call. Do NOT put double quotes around the parms or your program call may get errors because your parameters get compromised with extra double quotes. Normally double quotes are added automatically inside the CL command processing program. Single quotes are allowed around your parmaeter data:  Ex: **'My Parm Value 1' 'My Parm Value 2'**
+
+**PYPATH** - The this is the directory path to your Python binaries (python/python3). Hopefully you have already installed the Yum versions so the default path should be good. Leave value set to `*DEFAULT`. **Default= /QOpenSys/pkgs/bin**. The default path lives in the **PYPATH** data area in the **PYONI** library.
+
+**CCSID** - When using the iToolkit component for command access, I originally had some issues with CL commands not working correctly. However I don't currently remember exactly why. This may have been solved, however I recommend still passing a value of 37 unless you are in a non US country. If you set to `*SAME`, the CCSID will stay the same as your current job with no change.
+
+**DSPSTDOUT** - Display the outfile contents. Nice when debigging. 
+
+**LOGSTDOUT** - Place STDOUT log entries into the current jobs job log. Use this if you want the log info in the IBM i joblog.
+
+**PRTSTDOUT** - Print STDOUT to a spool file. Use this if you want a spool file of the log output.
+
+**DLTSTDOUT** - This option insures that the STDOUT IFS temp files get cleaned up after processing. All IFS log files get created in the /tmp/mono directory.
+
+# Using the PYRUN2 CL command to call a Python application passing individual named parms. 
+
+The following example calls a python 3 script named: helloworld.py from the /python directory and passes the program up to 20 parameters individually via the PYRUN CL command. 
+
+ ```
+      PYRUN2 SCRIPTDIR('/python')          
       SCRIPTFILE(helloworld.py)            
       PYVERSION(3)                          
       PARM01(p1)                            
@@ -55,7 +94,7 @@ The following example calls a python 3 script named: helloworld.py from the /pyt
       DLTSTDOUT(*YES)   
 ```      
 
-# PYRUN command parms
+# PYRUN2 command parms
 
 **SCRIPTDIR** - The IFS directory location for the Python script. **Ex: /python**
 
@@ -76,4 +115,5 @@ The following example calls a python 3 script named: helloworld.py from the /pyt
 **PRTSTDOUT** - Print STDOUT to a spool file. Use this if you want a spool file of the log output.
 
 **DLTSTDOUT** - This option insures that the STDOUT IFS temp files get cleaned up after processing. All IFS log files get created in the /tmp/mono directory.
+
 
