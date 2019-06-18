@@ -60,7 +60,7 @@ The following example calls a python 3 script named: helloworld.py from the /pyt
 
 **CCSID** - When using the iToolkit component for command access, I originally had some issues with CL commands not working correctly. However I don't currently remember exactly why. This may have been solved, however I recommend still passing a value of 37 unless you are in a non US country. If you set to `*SAME`, the CCSID will stay the same as your current job with no change.
 
-**DSPSTDOUT** - Display the outfile contents. Nice when debigging. 
+**DSPSTDOUT** - Display the outfile contents. Nice when debugging. 
 
 **LOGSTDOUT** - Place STDOUT log entries into the current jobs job log. Use this if you want the log info in the IBM i joblog.
 
