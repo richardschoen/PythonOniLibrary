@@ -1,5 +1,5 @@
 # PythonOniLibrary
-**NOTE:** PYRUN command functionality has been merged in to the QSHPYRUN command that is part of the QShell on i command set. The PYRUN command here will not be enhanced, however QSHPYRUN will continue to be enhanced any further. You can access the QShell on i project site here:
+**NOTE:** PYRUN command functionality has been merged in to the QSHPYRUN command that is part of the QShell on i command set. The PYRUN command here will not be enhanced any further, however QSHPYRUN will continue to be enhanced. You can access the QShell on i project site here:
 
 https://github.com/richardschoen/QShOni
 
