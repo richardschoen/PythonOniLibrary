@@ -1,4 +1,8 @@
 # PythonOniLibrary
+PYRUN command functionality has been merged in to the QSHPURUN command that is part of the QShell on i command set. The PYRUN command here will not be enhanced, however QSHPYRUN will continue to be enhanced. You can access the QShell on i project site here:
+
+https://github.com/richardschoen/QShOni
+
 This IBM i library contains useful CL wrapper commands to allow Python to be called and consumed from regular IBM i jobs written in CL, RPG or COBOL. After calls are made to Python scripts, the caller can get return results (STDOUT) from the applications in one of the following formats: IFS file, OUTFILE, job log entries or spool file. 
 
 The main benefit of this wrapper is to be able to integrate Python applications on-the-fly with standard IBM i job streams.
